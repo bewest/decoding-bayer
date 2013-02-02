@@ -1,0 +1,25 @@
+>>> '\x04'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/runpy.py", line 162, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/usr/lib/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/home/bewest/src/glucodump/glucodump/main.py", line 20, in <module>
+    main(sys.argv)
+  File "/home/bewest/src/glucodump/glucodump/main.py", line 11, in main
+    for rec in bc.sync():
+  File "glucodump/contourusb.py", line 87, in sync
+    data = self.dev.read()
+  File "glucodump/usbcomm.py", line 65, in read
+    data = self.epin.read(self.blocksize)
+  File "/usr/local/lib/python2.7/dist-packages/pyusb-1.0.0a3-py2.7.egg/usb/core.py", line 301, in read
+    return self.device.read(self.bEndpointAddress, size, self.interface, timeout)
+  File "/usr/local/lib/python2.7/dist-packages/pyusb-1.0.0a3-py2.7.egg/usb/core.py", line 661, in read
+    self.__get_timeout(timeout)
+  File "/usr/local/lib/python2.7/dist-packages/pyusb-1.0.0a3-py2.7.egg/usb/backend/libusb1.py", line 559, in intr_read
+    timeout)
+  File "/usr/local/lib/python2.7/dist-packages/pyusb-1.0.0a3-py2.7.egg/usb/backend/libusb1.py", line 648, in __read
+    _check(retval)
+  File "/usr/local/lib/python2.7/dist-packages/pyusb-1.0.0a3-py2.7.egg/usb/backend/libusb1.py", line 403, in _check
+    raise USBError(_str_error[ret], ret, _libusb_errno[ret])
+usb.core.USBError: [Errno 110] Operation timed out
