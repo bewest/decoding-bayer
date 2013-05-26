@@ -28,9 +28,11 @@ I had thinking to re-use the
 [mail.sh](https://github.com/craSH/socat/blob/master/mail.sh),
 and
 [ftp.sh](https://github.com/craSH/socat/blob/master/ftp.sh) examples
+* http://www.tldp.org/LDP/abs/html/ioredirintro.html
 * http://stackoverflow.com/questions/11030766/one-virtual-serial-port-with-socat
-* 
+* http://stackoverflow.com/questions/2174071/how-to-use-dev-ptmx-for-create-a-virtual-serial-port
 * http://www.dest-unreach.org/socat/doc/socat.html#EXAMPLES
+
 
 
 The reason I'd like to do all this is to connect the usb device to a
