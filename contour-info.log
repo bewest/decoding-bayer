@@ -1,0 +1,62 @@
+
+T:  Bus=02 Lev=02 Prnt=03 Port=01 Cnt=02 Dev#=  7 Spd=12  MxCh= 0
+D:  Ver= 2.00 Cls=00(>ifc ) Sub=00 Prot=00 MxPS=64 #Cfgs=  1
+P:  Vendor=1a79 ProdID=6002 Rev=01.00
+S:  Manufacturer=Bayer HealthCare LLC
+S:  Product=Contour USB
+S:  SerialNumber=0000000002902076
+C:  #Ifs= 2 Cfg#= 1 Atr=80 MxPwr=500mA
+I:  If#= 0 Alt= 0 #EPs= 2 Cls=03(HID  ) Sub=00 Prot=02 Driver=usbhid
+I:  If#= 1 Alt= 0 #EPs= 2 Cls=08(stor.) Sub=06 Prot=50 Driver=usb-storage
+udevadm  info --export --query=all --name /dev/usb/hiddev0 
+
+P: /devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb2/2-2/2-2.2/2-2.2:1.0/usb/hiddev0
+N: usb/hiddev0
+E: DEVNAME=/dev/usb/hiddev0
+E: DEVPATH=/devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb2/2-2/2-2.2/2-2.2:1.0/usb/hiddev0
+E: MAJOR=180
+E: MINOR=96
+E: SUBSYSTEM=usb
+E: UDEV_LOG=3
+
+tail -n 40 /var/log/syslog 
+Jun  1 11:17:01 paragon CRON[30498]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jun  1 11:35:58 paragon kernel: [31023.517052] usb 2-2.2: USB disconnect, device number 6
+Jun  1 11:36:53 paragon kernel: [31078.713849] usb 2-2.2: new full-speed USB device number 7 using uhci_hcd
+Jun  1 11:36:54 paragon mtp-probe: checking bus 2, device 7: "/sys/devices/pci0000:00/0000:00:11.0/0000:02:00.0/usb2/2-2/2-2.2"
+Jun  1 11:36:54 paragon kernel: [31078.946724] generic-usb 0003:1A79:6002.000E: hiddev0,hidraw2: USB HID v10.10 Device [Bayer HealthCare LLC Contour USB] on usb-0000:02:00.0-2.2/input0
+Jun  1 11:36:54 paragon mtp-probe: bus: 2, device: 7 was not an MTP device
+Jun  1 11:36:54 paragon kernel: [31078.949969] scsi5 : usb-storage 2-2.2:1.1
+Jun  1 11:36:55 paragon kernel: [31079.951285] scsi 5:0:0:0: Direct-Access                                    PQ: 0 ANSI: 2
+Jun  1 11:36:55 paragon kernel: [31079.953907] scsi 5:0:0:1: Direct-Access                                    PQ: 0 ANSI: 2
+Jun  1 11:36:55 paragon kernel: [31079.963502] sd 5:0:0:0: Attached scsi generic sg4 type 0
+Jun  1 11:36:55 paragon kernel: [31079.965431] sd 5:0:0:1: Attached scsi generic sg5 type 0
+Jun  1 11:36:55 paragon kernel: [31079.976199] sd 5:0:0:0: [sdc] 1048545 512-byte logical blocks: (536 MB/511 MiB)
+Jun  1 11:36:55 paragon kernel: [31079.982725] sd 5:0:0:1: [sdd] 839617 512-byte logical blocks: (429 MB/409 MiB)
+Jun  1 11:36:55 paragon kernel: [31079.990626] sd 5:0:0:0: [sdc] Write Protect is off
+Jun  1 11:36:55 paragon kernel: [31079.990632] sd 5:0:0:0: [sdc] Mode Sense: 1b 00 00 00
+Jun  1 11:36:55 paragon kernel: [31079.998909] sd 5:0:0:1: [sdd] Write Protect is off
+Jun  1 11:36:55 paragon kernel: [31079.998918] sd 5:0:0:1: [sdd] Mode Sense: 1b 00 00 00
+Jun  1 11:36:55 paragon kernel: [31080.002665] sd 5:0:0:0: [sdc] No Caching mode page present
+Jun  1 11:36:55 paragon kernel: [31080.002681] sd 5:0:0:0: [sdc] Assuming drive cache: write through
+Jun  1 11:36:55 paragon kernel: [31080.010419] sd 5:0:0:1: [sdd] No Caching mode page present
+Jun  1 11:36:55 paragon kernel: [31080.010426] sd 5:0:0:1: [sdd] Assuming drive cache: write through
+Jun  1 11:36:55 paragon kernel: [31080.036380] sd 5:0:0:0: [sdc] No Caching mode page present
+Jun  1 11:36:55 paragon kernel: [31080.036387] sd 5:0:0:0: [sdc] Assuming drive cache: write through
+Jun  1 11:36:55 paragon kernel: [31080.042609] sd 5:0:0:1: [sdd] No Caching mode page present
+Jun  1 11:36:55 paragon kernel: [31080.042615] sd 5:0:0:1: [sdd] Assuming drive cache: write through
+Jun  1 11:36:55 paragon kernel: [31080.057854]  sdc:
+Jun  1 11:36:55 paragon kernel: [31080.065797]  sdd:
+Jun  1 11:36:55 paragon kernel: [31080.085270] sd 5:0:0:0: [sdc] No Caching mode page present
+Jun  1 11:36:55 paragon kernel: [31080.085277] sd 5:0:0:0: [sdc] Assuming drive cache: write through
+Jun  1 11:36:55 paragon kernel: [31080.085282] sd 5:0:0:0: [sdc] Attached SCSI removable disk
+Jun  1 11:36:55 paragon kernel: [31080.103571] sd 5:0:0:1: [sdd] No Caching mode page present
+Jun  1 11:36:55 paragon kernel: [31080.103576] sd 5:0:0:1: [sdd] Assuming drive cache: write through
+Jun  1 11:36:55 paragon kernel: [31080.103579] sd 5:0:0:1: [sdd] Attached SCSI removable disk
+Jun  1 11:39:01 paragon CRON[32740]: (root) CMD (  [ -x /usr/lib/php5/maxlifetime ] && [ -d /var/lib/php5 ] && find /var/lib/php5/ -depth -mindepth 1 -maxdepth 1 -type f -cmin +$(/usr/lib/php5/maxlifetime) ! -execdir fuser -s {} 2>/dev/null \; -delete)
+Jun  1 12:09:01 paragon CRON[32886]: (root) CMD (  [ -x /usr/lib/php5/maxlifetime ] && [ -d /var/lib/php5 ] && find /var/lib/php5/ -depth -mindepth 1 -maxdepth 1 -type f -cmin +$(/usr/lib/php5/maxlifetime) ! -execdir fuser -s {} 2>/dev/null \; -delete)
+Jun  1 12:17:01 paragon CRON[32910]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jun  1 12:39:01 paragon CRON[32972]: (root) CMD (  [ -x /usr/lib/php5/maxlifetime ] && [ -d /var/lib/php5 ] && find /var/lib/php5/ -depth -mindepth 1 -maxdepth 1 -type f -cmin +$(/usr/lib/php5/maxlifetime) ! -execdir fuser -s {} 2>/dev/null \; -delete)
+Jun  1 13:09:01 paragon CRON[33055]: (root) CMD (  [ -x /usr/lib/php5/maxlifetime ] && [ -d /var/lib/php5 ] && find /var/lib/php5/ -depth -mindepth 1 -maxdepth 1 -type f -cmin +$(/usr/lib/php5/maxlifetime) ! -execdir fuser -s {} 2>/dev/null \; -delete)
+Jun  1 13:17:01 paragon CRON[33083]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jun  1 13:23:57 paragon kernel: [37498.617809] generic-usb 0003:1A79:6002.000F: hiddev0,hidraw2: USB HID v10.10 Device [Bayer HealthCare LLC Contour USB] on usb-0000:02:00.0-2.2/input0
