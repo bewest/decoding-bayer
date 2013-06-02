@@ -85,7 +85,12 @@ server implementation like this:
 * http://www.linux-usb.org/USB-guide/x194.html
 * http://www.linux-usb.org/USB-guide/x173.html
 * http://www.linuxjournal.com/article/6573?page=0,1 - example usbserial device driver
-* 
+* https://www.kernel.org/doc/Documentation/usb/proc_usb_info.txt
+* https://www.kernel.org/pub/linux//kernel/people/marcelo/linux-2.4/Documentation/usb/hiddev.txt
+* http://www.linux-usb.org/gadget/usb.c
+* http://www.linux-usb.org/gadget/
+* http://www.linux-usb.org/usb.devices.txt
+* http://www.linuxjournal.com/article/6434?page=0,1 - usb serial drivers explained
 
 Because the Bayer advertises itself as an `HID` type, linux fails to hook it up
 to usbserial for the generic serial adapter?
