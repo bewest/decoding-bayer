@@ -96,3 +96,4 @@ Because the Bayer advertises itself as an `HID` type, linux fails to hook it up
 to usbserial for the generic serial adapter?
 A simple kernel driver could fix this?
 
+1359
